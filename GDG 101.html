@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Fact</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .fact-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .fact {
+            font-size: 1.5em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="fact-container">
+        <div class="fact" id="marsFact"></div>
+        <button onclick="showRandomFact()">Show Another Fact</button>
+    </div>
+
+    <script>
+        const marsFacts = [
+            "Mars is the fourth planet from the Sun.",
+            "Mars is often referred to as the 'Red Planet' due to its reddish appearance.",
+            "A day on Mars, known as a sol, is approximately 24.6 hours long.",
+            "Mars has the largest volcano in the solar system, Olympus Mons, which is about 13.6 miles (22 kilometers) high.",
+            "Mars has two small moons, Phobos and Deimos.",
+            "The atmosphere of Mars is about 100 times thinner than Earth's and is mostly carbon dioxide.",
+            "Mars experiences seasons similar to Earth due to its axial tilt of 25 degrees.",
+            "Water ice has been found on Mars, particularly at the polar ice caps.",
+            "Mars has a very weak magnetic field compared to Earth.",
+            "The average temperature on Mars is about -80 degrees Fahrenheit (-62 degrees Celsius)."
+        ];
+
+        function showRandomFact() {
+            const randomIndex = Math.floor(Math.random() * marsFacts.length);
+            document.getElementById('marsFact').innerText = marsFacts[randomIndex];
+        }
+
+        // Show a random fact on initial load
+        showRandomFact();
+    </script>
+</body>
+</html>
